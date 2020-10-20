@@ -1,11 +1,5 @@
-import sys
-
-lists = sys.argv[1]
-
-with open(lists, "r") as listss:
-
-	site = listss.readlines()
-	print("[+] Filtering . . . ")
-	for sites in site:
-		x = sites.split("/")
-		open("filterd.txt", "a").write("http://"+x[2]+"\n")
+listn = [i.strip() for i in open(raw_input("input list >>"), "r").readlines()]
+print("[+] Filtering . . . ")
+for i in listn:
+    x = i.split("/")
+    open("filtered.txt", "a").write("http://"+x[2]+"\n")
